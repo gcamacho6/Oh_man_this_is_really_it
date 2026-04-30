@@ -1,0 +1,14 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "p22-flw-exhibition", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+canvas {
+  display: block;
+}
