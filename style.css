@@ -1,0 +1,307 @@
+/*---------NAVIGATION BAR------*/
+
+/*--FONTS----*/
+
+/*--
+
+<link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Mendl Sans Dawn Regular:
+font-family: "mendl-sans-dawn", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Mendl Sans Dawn Bold:
+font-family: "mendl-sans-dawn", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Mendl Sans Dawn Thin:
+font-family: "mendl-sans-dawn", sans-serif;
+font-weight: 200;
+font-style: normal;
+
+-----*/
+
+
+nav {
+    margin: 0px;
+
+    ul{
+font-family: "mendl-sans-dawn", sans-serif;
+font-weight: 200;
+font-style: normal;
+
+
+        list-style-type: none;
+        margin: 0px;
+        padding: 11px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        border: 0.7px solid white;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    ul li a{
+        display: block;
+        color:white;
+        padding: 0px, 0px, 0px, 0px;
+        margin: 8px;
+        text-decoration: none;
+    }
+
+    ul li a:hover{
+        background-color: white;
+    }
+}
+
+
+/*---------REESOURCES---------*/
+
+
+/*PAGE 1:*/
+/*
+color: #BB0002; red
+Color: #E99D24; orange
+color: #ACD795; green
+color: #050111; black not black 
+color: #F2F2F2; white not white
+
+FONTS: 
+Headers - 
+1. <link rel="stylesheet" href="https://use.typekit.net/iar1txm.css"> 
+
+font-family: "cotton", sans-serif;
+font-weight: 400;
+font-style: normal; 
+
+2. <link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Waverly CF Light:
+font-family: "waverly-cf", sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Waverly CF Bold:
+font-family: "waverly-cf", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+
+Main text - 
+<link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Regular text:
+font-family: "redaction", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Redaction Bold:
+font-family: "redaction", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Redaction 70 Regular
+font-family: "redaction-70", sans-serif;
+font-weight: 400;
+font-style: normal;
+*/
+
+h1{
+font-family: "cotton", sans-serif;
+font-weight: 400;
+font-style: normal; 
+}
+
+#welcome{
+    background-image: url(Assets/img/backgroundP1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;}
+
+
+/*PAGE 2:*/
+/*
+color: #4101F7; blue
+color: #CFF765; neon green
+color: #9DF0E2; Auqua marine
+color: #F339A7; Fushia
+color: #F2F2F2; Bright red
+color: #1A1514; Black
+color: #FFFFFF; white
+
+FONTS:
+Main text - 
+<link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Beowolf R23:
+font-family: "ltr-beowolf-r23", serif;
+font-weight: 400;
+font-style: normal;
+
+Other text - 
+
+1. text in circles and cubes:
+<link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Backspacer OT Round:
+font-family: "backspacer-round", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Backspacer OT Squarez; 
+font-family: "backspacer-square", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+2. Stencil text:
+<link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Battery Park Regular:
+font-family: "battery-park", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+3. already included texts
+*/
+
+#pageTwo {
+    background-image: url(Assets/img/staticForOverlayP2.gif);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    background-image: url(Assets/img/backgroundP2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+.static {
+    opacity: 0.5;
+}
+
+
+/*PAGE 3:*/
+/*
+color: #F4DA0F; yellow
+Color: #488AFF; darling blue
+color: #F0BBF4; pink
+color: #FF5827; orange 
+color: #A2CEF6; light blue
+color: #034B01; dark green
+
+FONTS: 
+Cool text - 
+<link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Juma ColorL
+font-family: "juma-color", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Juma Monochrome;
+font-family: "juma-monochrome", sans-serif;
+font-weight: 600;
+font-style: normal;
+
+Main text - 
+<link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Brooklyn Heritage Script Regular:
+font-family: "brooklyn-heritage-script", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Brooklyn Heritage Script Bold:
+font-family: "brooklyn-heritage-script", sans-serif;
+font-weight: 700;
+font-style: normal;
+*/
+
+#PageThree{
+    background-image: url(Assets/img/backgroundP3.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/*PAGE 4:*/
+/*
+color: #300111; Marron
+color: #604154; Purple
+color: #6C92A3; lightest blue 
+color: #5C7F92; medium blue
+color: #2E4652; greyish blue
+color: #0D1F29; Darest blue
+
+FONTS: 
+Main text - 
+<link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Coral Pixels Regular
+font-family: "coral-pixels", sans-serif;
+font-weight: 400;
+font-style: normal;
+*/
+
+#PageFour {
+    background-image: url(Assets/img/background-p4.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;}
+
+
+/*PAGE 5:*/
+/*
+color: 'black';
+color: 'white';
+
+FONTS: 
+Main text - 
+<link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Corbel Regular:
+font-family: "corbel", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+Corbel Italic:
+font-family: "corbel", sans-serif;
+font-weight: 400;
+font-style: italic;
+
+Corbel Bold:
+font-family: "corbel", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+Corbel Bold Italic:
+font-family: "corbel", sans-serif;
+font-weight: 700;
+font-style: italic;
+
+Mono text - 
+<link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+Mono45 Headline Light:
+font-family: "mono45-headline", monospace;
+font-weight: 300;
+font-style: normal;
+
+Mono45 Headline Bold:
+font-family: "mono45-headline", monospace;
+font-weight: 700;
+font-style: normal;
+*/
+
+#PageFive {
+    background-image: url(Assets/img/background-p5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;}
+
