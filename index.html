@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html>
-   <head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>welcome page</title>
+    <title>Oh man, this is really it — 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Adobe Font-->
     <link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
+
+    <!--stylesheet-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--p5.js loaded from CDN-->
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.12/lib/p5.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.11.12/lib/addons/p5.sound.min.js"></script>
   </head>
 
 
 
+
+
+
   <body id="welcome">
 
-    <!-- Force font to load before p5.js uses it -->
-    <span style="font-family: 'p22-flw-exhibition'; opacity: 0; position: absolute;">.</span>
+    <!-- Forces browser to load the Adobe font before p5.js uses it-->
+    <span class="font-preload">.</span>
+
+
 
     <!-- NAVIGATION BAR -->
     <nav>
@@ -28,31 +39,22 @@
       </ul>
     </nav>
 
-    <!-- TEXT LAYER — sits below the canvas -->
-
-    
-  <div id="text-layer">
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
 
-
-      <p>I sound the same, but I never mean the same thing twice.<br><br><br>
-      I can thrill you or undo you.<br><br><br>
-      I am the same words spoken in a thousand different ways.<br><br><br>
-      Don't you feel the weight of my meanings?
-      What can I be?<br><br><br>
-      In this project, the answer is never fixed. <br>Each interaction turns language into a space <where meaning moves.
+    <!--background + text sit here, BELOW the canvas -->
+    <div id="text-layer">
+      <p>I sound the same, but I never mean the same thing twice.</p>
+      <p>I can thrill you or undo you.</p>
+      <p>I am the same words spoken in a thousand different ways.</p>
+      <p>Don't you feel the weight of my meanings?</p>
+      <p>What can I be?</p>
+      <p>In this project, the answer is never fixed.<br>
+         Each interaction turns language into a space where meaning moves.</p>
     </div>
 
-    <!-- p5.js canvas renders on top via sketch.js -->
+
+    
+    <!-- p5.js sketch: suppose to make canvas render ON TOP of everything above -->
     <script src="sketch.js"></script>
 
   </body>
