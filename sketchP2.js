@@ -133,9 +133,9 @@ function keyReleased() { showText = false; }
 
 // MIDDLE: toggle word on mouse click
 function mousePressed() {
-  if (myWord === "one") {
+  if (myWord === "oh man") {
     myWord = "this is it";
   } else {
-    myWord = "one";
+    myWord = "oh man";
   }
 }
