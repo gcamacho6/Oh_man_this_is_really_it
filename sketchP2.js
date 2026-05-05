@@ -117,9 +117,11 @@ function draw() {
   text(myWord, mouseX, mouseY);
   pop();
 
-  // ──MIDDLE: STAMPSS (ps.remember to make it go slower──//
-  addRandomTextStamps(0.2);
-  drawRandomTextFill(myColors);
+  // ── MIDDLE: random words//////////////////////////////////////──
+  if (frameCount % 4 === 0) {
+    addRandomTextStamps(1);
+  }
+  drawRandomTextFill();
 
   // ── 3. TOP: shaking text with keybpard──────────────────/////
   if (showText) {
@@ -160,7 +162,7 @@ function mousePressed() {
 
 /////////////////////////ADDED STAMPS THINGY /////////
 function resetRandomTextFill() {
-  randomTextStamps = [0.5];
+  randomTextStamps = [];
 
   //SIZING// (use constants = fixed value)
   const approxTextSize = width * 0.12;
@@ -189,7 +191,6 @@ function addRandomTextStamps(countPerFrame) {
 
 function drawRandomTextFill() {
   push();
-
   textAlign(CENTER, CENTER);
   for (let stamp of randomTextStamps) {
     fill(stamp.color);
@@ -197,6 +198,5 @@ function drawRandomTextFill() {
     textSize(stamp.size);
     text(stamp.word, stamp.x, stamp.y);
   }
-  
   pop();
 }
