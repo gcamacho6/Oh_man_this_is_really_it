@@ -9,6 +9,7 @@ function setup() {
 
   // IMPORTANT: lets mouse events pass through the canvas to the HTML beneath
   canvas.elt.style.pointerEvents = 'none';
+  canvas.elt.style.zIndex = '5'; // above p1 text-layer, below nav
 
   textFont('p22-flw-exhibition');
 }

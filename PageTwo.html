@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.12/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.12/lib/addons/p5.sound.min.js"></script>
   </head>
 
   <body id="pageTwo">
 
     <span class="font-preload">.</span>
 
-    <!-- NAVIGATION BAR -->
+    <!-- NAVIGATION BAR (z-index: 10) -->
     <nav>
       <ul>
         <li><a href="index.html">1</a></li>
@@ -23,7 +25,13 @@
       </ul>
     </nav>
 
-    <h2>oh man, this is really it</h2>
+    <!-- HTML text layer (z-index: 1) — visible through transparent canvas -->
+    <div id="p2-text-layer">
+      <h2>oh man, this is really it</h2>
+    </div>
+
+    <!-- Single combined p5.js sketch -->
+    <script src="sketchP2.js"></script>
 
   </body>
 </html>
