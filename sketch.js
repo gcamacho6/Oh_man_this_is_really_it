@@ -1,10 +1,14 @@
-
 var b = [];
 let pageSound;
 let soundStarted = false;
 
 function preload() {
-  pageSound = loadSound("Assets/audio/trumptets p1.aiff");
+  soundFormats('mp3', 'wav', 'm4a', 'ogg');
+  pageSound = loadSound(
+    "Assets/audio/trumptetsP1.mp3",
+    () => {},
+    () => { pageSound = null; }
+  );
 }
 
 function setup() {
