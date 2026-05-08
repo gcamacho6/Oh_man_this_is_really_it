@@ -1,9 +1,3 @@
-// sketchP2.js — All three Page 2 sketches combined into one file
-// Layer order inside draw() — painted bottom to top:
-//   1. BACK:   radial dot pattern — enlarged to fill page, continuously spinning
-//   2. MIDDLE: colored text follows mouse — large, covers the page
-//   3. TOP:    shaking text appears on keypress
-
 // ── TOP /////////////
 let showText = false;
 

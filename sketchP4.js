@@ -1,12 +1,6 @@
 /*Video Tutorial help: https://youtu.be/HLRtRSuoY8A
 ---------------------------------------*/
 
-// ── All three files combined into one for the VS project ──
-// sketch.js + wiper.js + letter.js from your uploaded WiperP5js.zip
-// Only change: wiper display() rotation offset fixed (HALF_PI → 90)
-// because angleMode is DEGREES, so the offset must also be in degrees.
-// Everything else — font, color, size, word, logic — is untouched.
-
 let font;
 let wiperImg;
 
@@ -15,7 +9,7 @@ let letters = [];
 let num = 25;
 let wiper;
 
-// ── Audio ────────────────────────────────────────────────────
+// ── Audio ────────────────────────────────────────────────────///
 let pageSound;
 let soundStarted = false;
 
@@ -47,7 +41,7 @@ function windowResized() {
 function draw() {
   clear();
 
-  // Start audio on first interaction (browser autoplay policy)
+  // Start audio//
   if (!soundStarted && pageSound && pageSound.isLoaded()) {
     userStartAudio().then(() => {
       if (!pageSound.isPlaying()) {
@@ -79,12 +73,8 @@ function mousePressed() {
   }
 }
 
-// ── WIPER CLASS ──────────────────────────────────────────────
-// Exact logic from your wiper.js — anchor stays at bottom-center,
-// sweeps left/right following the mouse like the reference example.
-// ONLY FIX: rotate(this.angle + HALF_PI) → rotate(this.angle + 90)
-// because angleMode(DEGREES) means all angles must be in degrees,
-// and HALF_PI (~1.57) was being treated as degrees instead of ~90°.
+// ── WIPER ////////////////////////////////////////////////////////
+
 
 class Wiper {
   constructor() {
@@ -98,7 +88,6 @@ class Wiper {
   }
 
   update() {
-    // Anchor stays fixed at bottom-center — wiper never leaves the bottom
     this.w1.set(width / 2, height - this.baseYOffset);
 
     let targetAngle = atan2(mouseY - this.w1.y, mouseX - this.w1.x);
@@ -126,9 +115,7 @@ class Wiper {
   }
 }
 
-// ── LETTER CLASS ─────────────────────────────────────────────
-// Exact code from your letter.js — nothing changed.
-
+// ── LETTER CLASS //////////////////////////////////
 class Letter {
   constructor() {
     this.reset();

@@ -1,7 +1,3 @@
-// sketchP3.js — Page 3
-// Animated text outline: lines radiate from each letter point,
-// oscillating in angle. Text is drawn on top in a ghostly fill.
-
 let font;
 let points = [];
 let msg    = "Oh man, this is really it";
@@ -23,7 +19,7 @@ function preload() {
 }
 
 function calculateSize() {
-  // Fit text inside the viewport with padding.
+  // Fit text inside the viewport with padding//
   const baseSize = 100;
   const padding = 40;
   const baseBounds = font.textBounds(msg, 0, 0, baseSize);
@@ -87,14 +83,14 @@ function draw() {
   let x = r * cos(angle);
   let y = r * sin(angle);
 
-  // Centre the text block on screen
+  // Centre the text block on screen//
   push();
   translate(
     (width - textBounds.w) / 2 - textBounds.x,
     (height - textBounds.h) / 2 - textBounds.y
   );
 
-  // Draw radiating lines from each outline point
+ 
   stroke(255);          // white lines
   strokeWeight(0.8);
   for (let i = 0; i < points.length; i++) {
@@ -102,16 +98,16 @@ function draw() {
          points[i].x + x, points[i].y + y);
   }
 
-  // Ghost text overlay
+  // Ghost text overlay//
   noStroke();
   textFont('brooklyn-heritage-script');
   textSize(size);
-  fill(255, 105, 180, 205);  // brighter trusting pink, higher opacity
+  fill(255, 105, 180, 205);  
   text(msg, x, y);
 
   pop();
 
-  // Advance oscillation
+
   let increment = 5 * sin(t);
   t++;
   angle += increment;
