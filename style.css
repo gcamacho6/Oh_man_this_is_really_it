@@ -48,10 +48,9 @@ nav ul li a:hover {
 /*---------p5 CAVAS------*/
 
 canvas {
-  position: fixed !important; /* fixed so it always covers the viewport */
+  position: fixed !important; 
   top: 0;
   left: 0;
-  /* z-index set per-sketch via JS: p1=5, p2-back=2, p2-mid=3, p2-top=4, nav=10 */
 }
 
 
@@ -107,7 +106,7 @@ font-style: normal;
 */
 
 #welcome {
-  background-image: url(Assets/img/backgroundP1.jpg);
+  background-image: url(Assets/img/pg1-background.gif);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -120,19 +119,19 @@ font-style: normal;
   left: 0;
   width: 100%;
   min-height: 100vh;
-  z-index: 0; /* sits BELOW the canvas */
+  z-index: 0; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  padding: 80px 40px 80px 40px; /* top padding clears "Welcome", bottom clears nav */
+  padding: 80px 40px 80px 40px; 
 
   font-family: "p22-flw-exhibition", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 15px;
-  color: #F2F2F2;
+  font-size: 17px;
+  color: #ACD795;
   opacity: 0.7;
 }
 
@@ -197,8 +196,7 @@ font-style: normal;
   min-height: 100vh;
 }
 
-/* p2-text-layer: HTML content on Page 2, sits just above the background (z-index 1)
-   and below all three p5.js canvases (z-index 2, 3, 4) */
+
 #p2-text-layer {
   position: absolute;
   top: 0;
@@ -212,7 +210,7 @@ font-style: normal;
   align-items: center;
   text-align: center;
   padding: 40px 40px 80px 40px;
-  pointer-events: none; /* clicks pass through to sketches */
+  pointer-events: none; 
 }
 
 #p2-text-layer h2 {
@@ -265,7 +263,7 @@ font-style: normal;
 
 
 #PageThree {
-  background-image: url(Assets/img/backgroundP3.png);
+  background-image: url(Assets/img/p3-background.gif);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -301,6 +299,7 @@ font-weight: 400;
 font-style: normal;
 */
 #PageFour {
+  position: relative;
   background-image: url(Assets/img/background-p4.jpg);
   background-size: cover;
   background-position: center;
@@ -308,11 +307,42 @@ font-style: normal;
   min-height: 100vh;
 }
 
-#PageFour h4 {
+#PageFour::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url(Assets/img/rain.gif);
+  background-size: tile;
+  background-position: center;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#p4-text-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 60px 40px 80px 40px;
+  pointer-events: none;
+}
+
+#p4-text-layer h4 {
   font-family: "coral-pixels", sans-serif;
   font-weight: 400;
   color: #F2F2F2;
-  padding: 40px;
+  font-size: 2rem;
+  opacity: 0.9;
+  text-align: center;
+  text-shadow: 20px;
 }
 
 
@@ -361,17 +391,39 @@ font-weight: 700;
 font-style: normal;
 */
 #PageFive {
-  background-image: url(Assets/img/background-p5.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: white;
   min-height: 100vh;
-}
-
-#PageFive h5 {
-  font-family: "corbel", sans-serif;
-  font-weight: 400;
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 40px;
+  padding-bottom: 90px; /* keep text clear of fixed nav */
 }
 
+#h5p {
+  font-family: "p22-toybox-blocks", monospace;
+  font-weight: 400;
+  color: black;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  text-align: center;
+}
+
+
+/* ============================================================
+   PAGE 5 TEXT LAYER
+   ============================================================ */
+#p5-text-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 40px 80px 40px;
+  pointer-events: none;
+}

@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.typekit.net/iar1txm.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.12/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.12/lib/addons/p5.sound.min.js"></script>
   </head>
 
   <body id="PageFour">
 
     <span class="font-preload">.</span>
 
-    <!-- NAVIGATION BAR -->
+    <!-- NAVIGATION BAR (z-index: 10) -->
     <nav>
       <ul>
         <li><a href="index.html">1</a></li>
@@ -23,7 +25,35 @@
       </ul>
     </nav>
 
-    <h4>oh man, this is really it</h4>
+    <!--
+      LAYER ORDER (bottom to top):
+        body background     — CSS background-p4.jpg
+        #p4-text-layer      — HTML text, z-index: 3  (on top of canvas)
+        sketchP4 canvas     — wiper + falling letters, z-index: 2
+        nav                 — z-index: 10
+    -->
+
+    <div id="p4-text-layer">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>      
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <h4>oh man, this is really it</h4>
+    </div>
+
+    <script src="sketchP4.js"></script>
 
   </body>
 </html>

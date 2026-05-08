@@ -10,9 +10,16 @@ let r      = 9;
 let angle  = 10;
 let t      = 0;
 let textBounds;
+let pageSound;
+let soundStarted = false;
+
+let sunImg;
 
 function preload() {
   font = loadFont("fonts/Roboto-Black.ttf");
+  pageSound = loadSound("Assets/audio/morning-sounds-pg 3.mp3");
+  sunImg = loadImage("Assets/img/sun.gif");
+
 }
 
 function calculateSize() {
@@ -25,6 +32,9 @@ function calculateSize() {
   size = max(24, baseSize * min(fitByWidth, fitByHeight) * 0.9);
   textBounds = font.textBounds(msg, 0, 0, size);
 }
+
+
+
 
 function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
@@ -56,6 +66,22 @@ function windowResized() {
 
 function draw() {
   clear();
+
+  if (!soundStarted && pageSound && pageSound.isLoaded()) {
+    userStartAudio().then(() => {
+      if (!pageSound.isPlaying()) {
+        pageSound.setVolume(0.6);
+        pageSound.loop();
+        soundStarted = true;
+      }
+    });
+  }
+
+//SUN THINGY//
+  if (sunImg) {
+    imageMode(CENTER);
+    image(sunImg, mouseX, mouseY, 400, 400);
+  }
 
   // Oscillating angle drives the line animation
   let x = r * cos(angle);
@@ -90,3 +116,17 @@ function draw() {
   t++;
   angle += increment;
 }
+
+function mousePressed() {
+  if (!soundStarted && pageSound && pageSound.isLoaded()) {
+    userStartAudio().then(() => {
+      if (!pageSound.isPlaying()) {
+        pageSound.setVolume(0.6);
+        pageSound.loop();
+        soundStarted = true;
+      }
+    });
+  }
+}
+
+

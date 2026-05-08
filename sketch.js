@@ -1,5 +1,11 @@
 
 var b = [];
+let pageSound;
+let soundStarted = false;
+
+function preload() {
+  pageSound = loadSound("Assets/audio/trumptets p1.aiff");
+}
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowHeight);
@@ -22,8 +28,31 @@ function draw() {
   // the HTML body background shows through
   clear();
 
+  startSoundOnce();
+
   // spotlight overlay
   spotlight(mouseX, mouseY, 300);
+}
+
+function startSoundOnce() {
+  if (!soundStarted && pageSound && pageSound.isLoaded()) {
+    userStartAudio().then(() => {
+      if (!soundStarted && !pageSound.isPlaying()) {
+        pageSound.setVolume(0.6);
+        pageSound.play();
+        soundStarted = true;
+      }
+    });
+  }
+}
+
+function mousePressed() {
+  startSoundOnce();
+}
+
+function touchStarted() {
+  startSoundOnce();
+  return false;
 }
 
 function spotlight(x, y, size) {

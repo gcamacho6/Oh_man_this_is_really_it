@@ -34,12 +34,17 @@ let colorStart, colorEnd;
 let repeatX = 2;
 let repeatY = 3;
 let spinAngle = 0;  
+let pageSound;
+let soundStarted = false;
 
 // //////////////////////////////////////////////////////////////
 
 function preload() {
   img = loadImage("Assets/img/word_p2.png");
+  pageSound = loadSound("Assets/audio/radio p2.wav");
+
 }
+
 
 function setup() {
   let cnv = createCanvas(windowWidth, windowHeight);
@@ -69,6 +74,17 @@ function windowResized() {
 
 function draw() {
   clear();
+
+  if (!soundStarted && pageSound && pageSound.isLoaded()) {
+    userStartAudio().then(() => {
+      if (!pageSound.isPlaying()) {
+        pageSound.setVolume(0.6);
+        pageSound.loop();
+        soundStarted = true;
+      }
+    });
+  }
+
 
   // ── 1. BACK///
   push();
@@ -148,18 +164,6 @@ function draw() {
 function keyPressed()  { showText = true;  }
 function keyReleased() { showText = false; }
 
-// MIDDLE: toggle word on mouse click
-function mousePressed() {
-  if (myWord === "oh man") {
-    myWord = "this is it";
-  } else {
-    myWord = "oh man";
-  }
-  resetRandomTextFill();
-}
-
-
-
 /////////////////////////ADDED STAMPS THINGY /////////
 function resetRandomTextFill() {
   randomTextStamps = [];
@@ -199,4 +203,25 @@ function drawRandomTextFill() {
     text(stamp.word, stamp.x, stamp.y);
   }
   pop();
+}
+
+function mousePressed() {
+  // Toggle center word on click
+  if (myWord === "oh man") {
+    myWord = "this is it";
+  } else {
+    myWord = "oh man";
+  }
+  resetRandomTextFill();
+
+  // Start audio on first user interaction (autoplay policy)
+  if (!soundStarted && pageSound && pageSound.isLoaded()) {
+    userStartAudio().then(() => {
+      if (!pageSound.isPlaying()) {
+        pageSound.setVolume(0.6);
+        pageSound.loop();
+        soundStarted = true;
+      }
+    });
+  }
 }
