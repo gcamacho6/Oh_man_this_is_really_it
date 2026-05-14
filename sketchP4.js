@@ -9,7 +9,6 @@ let letters = [];
 let num = 25;
 let wiper;
 
-// ── Audio ────────────────────────────────────────────────────///
 let pageSound;
 let soundStarted = false;
 
@@ -38,10 +37,13 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
+/////////////////////////////////////////////////////////////////////
+
+
 function draw() {
   clear();
 
-  // Start audio//
+  // SOUND///
   if (!soundStarted && pageSound && pageSound.isLoaded()) {
     userStartAudio().then(() => {
       if (!pageSound.isPlaying()) {
@@ -61,6 +63,7 @@ function draw() {
   }
 }
 
+  // SOUND (main function///
 function mousePressed() {
   if (!soundStarted && pageSound && pageSound.isLoaded()) {
     userStartAudio().then(() => {
@@ -73,9 +76,9 @@ function mousePressed() {
   }
 }
 
+
+
 // ── WIPER ////////////////////////////////////////////////////////
-
-
 class Wiper {
   constructor() {
     this.l = 360;
@@ -114,6 +117,8 @@ class Wiper {
     pop();
   }
 }
+
+
 
 // ── LETTER CLASS //////////////////////////////////
 class Letter {

@@ -1,7 +1,7 @@
-// ── TOP /////////////
+// ── TOP layer/////////////
 let showText = false;
 
-// ── MIDDLE //////////
+// ── MIDDLE layer//////////
 let myWord = "Oh man, this is it";
 let myColors = ["#4101F7", "#CFF765", "#9DF0E2", "#F339A7", "#FE4732", "#1A1514"];
 let fonts = [
@@ -16,7 +16,7 @@ let fonts = [
 let randomTextStamps = [];
 let maxRandomStamps = 0;
 
-// ── BACK  ///////
+// ── BACK layer ///////
 let minR = 2;
 let maxR = 600;       
 let ptsPerRing = 120; //more points
@@ -31,7 +31,10 @@ let spinAngle = 0;
 let pageSound;
 let soundStarted = false;
 
-// //////////////////////////////////////////////////////////////
+// //////////////////////////////////////////////////////////////////////
+
+
+
 
 function preload() {
   img = loadImage("Assets/img/word_p2.png");
@@ -80,7 +83,8 @@ function draw() {
   }
 
 
-  // ── 1. BACK///
+
+  // ── 1. BACK/////
   push();
   noStroke();
   translate(width / 2, height / 2);
@@ -117,6 +121,9 @@ function draw() {
   }
   pop();
 
+
+
+
   // ── 2. MIDDLE────────///
   push();
 
@@ -132,6 +139,9 @@ function draw() {
     addRandomTextStamps(1);
   }
   drawRandomTextFill();
+
+  
+
 
   // ── 3. TOP: shaking text with keybpard──────────────────/////
   if (showText) {
@@ -153,6 +163,9 @@ function draw() {
 }
 
 // /////////////////////////////////////////////////////////
+
+
+
 
 // TOP: show/hide shaking text on keypress
 function keyPressed()  { showText = true;  }
@@ -208,6 +221,8 @@ function mousePressed() {
   }
   resetRandomTextFill();
 
+
+///SOUND///
   // Start audio on first user interaction (autoplay policy)
   if (!soundStarted && pageSound && pageSound.isLoaded()) {
     userStartAudio().then(() => {

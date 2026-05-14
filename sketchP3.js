@@ -60,6 +60,10 @@ function windowResized() {
   });
 }
 
+/////////////////////////////////////////////////////////////////////////
+
+
+
 function draw() {
   clear();
 
@@ -73,17 +77,19 @@ function draw() {
     });
   }
 
+
+
 //SUN THINGY//
   if (sunImg) {
     imageMode(CENTER);
     image(sunImg, mouseX, mouseY, 400, 400);
   }
 
-  // Oscillating angle drives the line animation
+  // Oscillating angle drives the line animation///
   let x = r * cos(angle);
   let y = r * sin(angle);
 
-  // Centre the text block on screen//
+  // Centre the text block on screen////
   push();
   translate(
     (width - textBounds.w) / 2 - textBounds.x,
@@ -113,6 +119,7 @@ function draw() {
   angle += increment;
 }
 
+///SOUND (main function)////
 function mousePressed() {
   if (!soundStarted && pageSound && pageSound.isLoaded()) {
     userStartAudio().then(() => {

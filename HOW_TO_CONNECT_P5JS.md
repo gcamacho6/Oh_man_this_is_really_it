@@ -1,4 +1,4 @@
-# How to Connect a p5.js Sketch to a VS Code HTML/CSS Project
+# How to Connect a p5.js Sketch to a VS Code HTML/CSS Project (made using claude - used to connect some of the sketchs)
 ## Step-by-Step Reference Guide
 
 ---

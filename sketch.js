@@ -2,6 +2,8 @@ var b = [];
 let pageSound;
 let soundStarted = false;
 
+
+
 function preload() {
   soundFormats('mp3', 'wav', 'm4a', 'ogg');
   pageSound = loadSound(
@@ -11,10 +13,11 @@ function preload() {
   );
 }
 
+
 function setup() {
   const canvas = createCanvas(windowWidth, windowHeight);
 
-  //createCanvas(windowWidth, windowHeight);
+  // former=createCanvas(windowWidth, windowHeight); changed to one above
 
 
   canvas.elt.style.pointerEvents = 'none';
@@ -23,9 +26,13 @@ function setup() {
   textFont('p22-flw-exhibition');
 }
 
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
+
+//////////////////////////////////////////////////////////////////////
+
 
 function draw() {
   clear();
@@ -36,6 +43,8 @@ function draw() {
   spotlight(mouseX, mouseY, 300);
 }
 
+
+//////////SOUND (main function)////////////////////
 function startSoundOnce() {
   if (!soundStarted && pageSound && pageSound.isLoaded()) {
     userStartAudio().then(() => {
@@ -48,6 +57,7 @@ function startSoundOnce() {
   }
 }
 
+
 function mousePressed() {
   startSoundOnce();
 }
@@ -57,6 +67,8 @@ function touchStarted() {
   return false;
 }
 
+
+////////RECT spotlight main function/////////////
 function spotlight(x, y, size) {
   // cutout//
   noStroke();
@@ -78,6 +90,8 @@ function spotlight(x, y, size) {
   endContour();
 
   endShape(CLOSE);
+
+////////////////////////////////////////////
 
   // "Welcome" //
   fill('#E99D24');        
